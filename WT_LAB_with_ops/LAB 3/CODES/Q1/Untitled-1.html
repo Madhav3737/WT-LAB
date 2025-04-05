@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 3 - Web Page</title>
+    <link rel="stylesheet" href="styles.css"> <!-- External CSS -->
+    <style>
+        /* Embedded CSS */
+        p {
+            font-size: 18px;
+            padding: 10px;
+            color: darkblue; /* Conflict: Inline, Embedded, External all define 'color' */
+        }
+        
+        .highlight {
+            background-color: yellow;
+        }
+
+        section + article {
+            background-color: lightgray; /* Adjacent sibling selector */
+        }
+
+        .box {
+            width: 300px;
+            padding: 20px;
+            border: 5px solid red;
+            margin: 15px;
+            background-color: lightblue;
+        }
+
+        p::first-letter {
+            font-size: 30px;
+            color: red;
+        }
+
+        p:hover {
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Web Technologies - Madhav Appana (N210409)</h1>
+    </header>
+
+    <nav>
+        <a href="#">Home</a> |
+        <a href="#">About</a> |
+        <a href="#">Contact</a>
+    </nav>
+
+    <section>
+        <h2>Welcome to Week 3 Web Page</h2>
+        <p style="color: green; padding: 5px;">This is an example paragraph with inline styling.</p>
+        <p class="highlight">This paragraph has a background color.</p>
+    </section>
+
+    <article>
+        <p class="box">This paragraph has padding applied.</p>
+        <p class="box" style="border: 2px dashed blue;">This paragraph has padding and a border.</p>
+        <p class="box" style="margin: 30px;">This paragraph has padding, border, and margin.</p>
+    </article>
+
+    <footer>
+        <p>Box Calculation:</p>
+        <p id="box-size"></p>
+        <p>© 2025 Madhav Appana - Web Technologies</p>
+    </footer>
+
+    <script>
+        // Calculate box size
+        let width = 300; // width
+        let padding = 20 * 2; // padding (left + right)
+        let border = 5 * 2; // border (left + right)
+        let margin = 15 * 2; // margin (left + right)
+        let totalSize = width + padding + border + margin;
+        document.getElementById('box-size').innerText = Total Box Width: ${totalSize}px;
+    </script>
+</body>
+</html>

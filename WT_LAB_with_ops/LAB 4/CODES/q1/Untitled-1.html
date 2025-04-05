@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Interactive Features</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* Task 1: Dynamic Style Toggle */
+        p {
+            padding: 10px;
+        }
+
+        /* Task 2: Simple Animation */
+        #box {
+            width: 200px;
+            height: 100px;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            line-height: 100px;
+            margin-bottom: 10px;
+        }
+
+        /* Task 3: Expandable FAQ Section */
+        .faq-question {
+            background-color: #f1f1f1;
+            padding: 10px;
+            margin: 5px 0;
+            cursor: pointer;
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 10px;
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Task 1: Dynamic Style Toggle -->
+    <h2>1. Dynamic Style Toggle</h2>
+    <p>This is a paragraph. Click the button to toggle background color.</p>
+    <button id="toggleColor">Toggle Background Color</button>
+
+    <br><br>
+
+    <!-- Task 2: Simple Animation -->
+    <h2>2. Simple Animation</h2>
+    <div id="box">This is a box</div>
+    <button id="fadeIn">Fade In</button>
+    <button id="fadeOut">Fade Out</button>
+    <button id="fadeToggle">Fade Toggle</button>
+
+    <br><br>
+
+    <!-- Task 3: Expandable FAQ Section -->
+    <h2>3. Expandable FAQ Section</h2>
+    <div class="faq">
+        <div class="faq-item">
+            <div class="faq-question">What is jQuery?</div>
+            <div class="faq-answer">jQuery is a fast, small, and feature-rich JavaScript library.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">What is a slide effect?</div>
+            <div class="faq-answer">A slide effect moves an element up or down on the page.</div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            // Task 1: Dynamic Style Toggle
+            $('#toggleColor').click(function() {
+                $('p').css('background-color', function(index, currentColor) {
+                    return currentColor === 'rgb(255, 255, 0)' ? 'white' : 'yellow';
+                });
+            });
+
+            // Task 2: Simple Animation
+            $('#fadeIn').click(function() {
+                $('#box').fadeIn(1000); // Fade in over 1 second
+            });
+
+            $('#fadeOut').click(function() {
+                $('#box').fadeOut(1000); // Fade out over 1 second
+            });
+
+            $('#fadeToggle').click(function() {
+                $('#box').fadeToggle(1000); // Toggle fade with 1 second duration
+            });
+
+            // Task 3: Expandable FAQ Section
+            $('.faq-question').click(function() {
+                $(this).next('.faq-answer').slideToggle(500); // Slide up/down over 500ms
+            });
+        });
+    </script>
+</body>
+</html>

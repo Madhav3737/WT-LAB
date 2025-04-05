@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Highlight Bold Text on Hover</title>
+<style>
+  .highlight {
+    background-color: yellow;
+  }
+</style>
+</head>
+<body>
+<p>Password must contain at least one <b>uppercase letter</b>, one <b>number</b>, and one <b>special character</b>.</p>
+<br>
+<a href="#" id="hoverLink">Hover over me</a>
+
+<script>
+  let boldWords = document.querySelectorAll("b");
+  let hoverLink = document.getElementById("hoverLink");
+
+  hoverLink.addEventListener("mouseover", function(){
+    boldWords.forEach(word => {
+      word.classList.add("highlight");
+    });
+  });
+
+  hoverLink.addEventListener("mouseout", function(){
+    boldWords.forEach(word => {
+      word.classList.remove("highlight");
+    });
+  });
+</script>
+</body>
+</html>

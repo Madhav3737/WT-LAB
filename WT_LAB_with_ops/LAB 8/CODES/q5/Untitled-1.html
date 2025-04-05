@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Window Size Tracker</title>
+</head>
+<body>
+<p>Window width: <span id="width"></span></p>
+<p>Window height: <span id="height"></span></p>
+
+<script>
+  function updateWindowSize(){
+    document.getElementById('width').textContent = window.innerWidth + " px";
+    document.getElementById('height').textContent = window.innerHeight + " px";
+  }
+
+  updateWindowSize();
+  window.addEventListener("resize", updateWindowSize);
+</script>
+</body>
+</html>

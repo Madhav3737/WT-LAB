@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Dropdown Item Counter</title>
+</head>
+<body>
+<label for="ddl">Choose a fruit: </label>
+<select id="ddl">
+  <option value="Orange">Orange</option>
+  <option value="Grapes">Grapes</option>
+  <option value="Pineapple">Pineapple</option>
+  <option value="Strawberry">Strawberry</option>
+  <option value="Kiwi">Kiwi</option>
+</select>
+<br>
+<button onclick="countItems()">Count Items</button>
+
+<script>
+  function countItems(){
+    let dropdown = document.getElementById("ddl");
+    let count = dropdown.options.length;
+    let items = [];
+    for(let i = 0; i < count; i++){
+      items.push(dropdown.options[i].text);
+    }
+    alert("Total Items: " + count + "\nItems: " + items.join(", "));
+  }
+</script>
+</body>
+</html>

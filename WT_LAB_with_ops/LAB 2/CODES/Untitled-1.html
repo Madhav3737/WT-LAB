@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Registration Form</title>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+ <style>
+ body {
+ font-family: 'Arial', sans-serif;
+ background-color: #e3f2fd; /* Light Blue */
+ margin: 0;
+ padding: 0;
+ }
+ .container {
+ width: 500px;
+ margin: 50px auto;
+ padding: 20px;
+ border: 1px solid #90caf9; /* Soft Blue border */
+ background-color: #ffffff; /* White background for the form */
+ border-radius: 10px;
+ box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+ position: relative;
+ overflow: hidden;
+ transition: transform 0.3s, background-color 0.3s;
+ }
+ .container:hover {
+ transform: scale(1.05);
+ background-color: #e1bee7; /* Soft Purple */
+ }
+ h2 {
+ text-align: center;
+ color: #222; /* Darker shade for heading */
+ margin-bottom: 20px;
+ font-weight: bold;
+ }
+ .error {
+ color: #d32f2f; /* Dark Red for error messages */
+ font-weight: bold;
+ margin-bottom: 5px;
+ font-size: 0.9em;
+ }
+ input[type="text"],
+ input[type="email"],
+ input[type="password"],
+ input[type="tel"],
+ input[type="date"],
+ textarea,
+ select {
+ width: 100%;
+ padding: 12px;
+ margin: 5px 0 15px 0;
+ border: 1px solid #64b5f6; /* Blue border */
+ border-radius: 5px;
+ box-sizing: border-box;
+ transition: border-color 0.3s;
+ background-color: #f1f8e9; /* Light Green */
+ }
+ input[type="text"]:focus,
+ input[type="email"]:focus,
+ input[type="password"]:focus,
+ input[type="tel"]:focus,
+ input[type="date"]:focus,
+ select:focus {
+ border-color: #4caf50; /* Green border on focus */
+ outline: none;
+ background-color: #fffde7; /* Soft yellow */
+ }
+ input[type="submit"],
+ input[type="reset"] {
+ background-color: #388e3c; /* Dark Green */
+ color: white;
+ padding: 12px 20px;
+ margin: 8px 0;
+ border: none;
+ border-radius: 5px;
+ cursor: pointer;
+ transition: background-color 0.3s, transform 0.2s;
+ font-weight: bold;
+ }
+ input[type="submit"]:hover {
+ background-color: #2e7d32;
+ transform: translateY(-1px);
+ }
+ input[type="reset"] {
+ background-color: #d32f2f; /* Red for reset button */
+ }
+ input[type="reset"]:hover {
+ background-color: #b71c1c;
+ }
+ label {
+ display: block;
+ margin-bottom: 5px;
+ font-weight: bold;
+ color: #444; /* Dark Gray */
+ }
+ .password-container {
+ position: relative;
+ }
+ .password-container i {
+ position: absolute;
+ right: 10px;
+ top: 50%;
+ transform: translateY(-50%);
+ cursor: pointer;
+ color: #777;
+ }
+ .password-container i:hover {
+ color: #222;
+ }
+ </style>
+</head>
+<body>
+<div class="container">
+ <h2>Student Registration Form</h2>
+ Web Technologies Lab - Madhav Appana - N210409
+ <form id="registrationForm" onsubmit="return confirmSubmission()">
+ <label for="firstName">First Name:</label>
+ <input type="text" id="firstName" name="firstName" required>
+ <label for="lastName">Last Name:</label>
+ <input type="text" id="lastName" name="lastName" required>
+ <label for="middleName">Middle Name:</label>
+ <input type="text" id="middleName" name="middleName">
+ <label for="email">Email:</label>
+ <input type="email" id="email" name="email" required>
+ <label for="dob">Date of Birth:</label>
+ <input type="date" id="dob" name="dob" required>
+ <label for="phone">Phone Number:</label>
+ <input type="tel" id="phone" name="phone" required placeholder="Enter phone number">
+ <label for="password">Password:</label>
+ <div class="password-container">
+ <input type="password" id="password" name="password" required>
+ <i class="fas fa-eye" id="togglePassword" onclick="togglePasswordVisibility()"></i>
+ </div>
+ <label for="country">Country:</label>
+ <select id="country">
+ <option value="India">India</option>
+ <option value="USA">USA</option>
+ </select>
+ <label for="address">Address:</label>
+ <input type="text" id="address" name="address" required>
+ <label>Hobbies:</label>
+ <input type="checkbox" name="hobbies" value="Reading"> Reading
+ <input type="checkbox" name="hobbies" value="Traveling"> Traveling
+ <input type="checkbox" name="hobbies" value="Gaming"> Gaming
+ <label for="photo">Upload Profile Picture:</label>
+ <input type="file" id="photo" name="photo" accept=".jpg, .jpeg, .png" required>
+ <label>
+ <input type="checkbox" id="terms" required> I agree to the Terms and Conditions
+ </label>
+ <input type="submit" value="Register">
+ <input type="reset" value="Reset">
+ </form>
+</div>
+<script>
+ function togglePasswordVisibility() {
+ const passwordInput = document.getElementById('password');
+ const toggleIcon = document.getElementById('togglePassword');
+ if (passwordInput.type === 'password') {
+ passwordInput.type = 'text';
+ toggleIcon.classList.remove('fa-eye');
+ toggleIcon.classList.add('fa-eye-slash');
+ } else {
+ passwordInput.type = 'password';
+ toggleIcon.classList.remove('fa-eye-slash');
+ toggleIcon.classList.add('fa-eye');
+ }
+ }
+</script>
+</body>
+</html>

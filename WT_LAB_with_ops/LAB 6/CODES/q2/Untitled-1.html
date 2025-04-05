@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 6 - jQuery Dynamic Elements</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: "Arial", sans-serif;
+            text-align: center;
+            background-color: #f7f7f7;
+            padding: 20px;
+        }
+
+        .task-heading {
+            font-size: 22px;
+            color: darkblue;
+            margin-top: 20px;
+            text-decoration: underline;
+        }
+
+        li {
+            width: 250px;
+            cursor: pointer;
+            height: 30px;
+            font-size: 16px;
+            padding: 5px;
+            border-radius: 5px;
+            margin: 5px auto;
+        }
+
+        li:nth-of-type(even) {
+            background-color: lightblue;
+        }
+
+        li:nth-of-type(odd) {
+            background-color: lightcoral;
+        }
+
+        .delbtn {
+            background-color: red;
+            border: 1px solid black;
+            padding: 5px;
+            color: white;
+            margin-left: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .box {
+            width: 60%;
+            padding: 15px;
+            margin: 10px auto;
+            background-color: lightyellow;
+            border: 2px solid black;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .toggle-box {
+            width: 300px;
+            height: 140px;
+            background-color: lightgreen;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            font-weight: bold;
+            margin: auto;
+            border-radius: 12px;
+            transition: background-color 0.3s ease;
+        }
+
+        input {
+            width: 65%;
+            padding: 10px;
+            font-size: 17px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: darkgreen;
+            color: white;
+            border: none;
+            width: 130px;
+            margin: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 16px;
+            border-radius: 6px;
+        }
+
+        button:hover {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Lab 6 - jQuery Dynamic Elements (Madhav Appana, N210409)</h2>
+
+    <!-- Task 1: Add and Remove Elements Dynamically -->
+    <h3 class="task-heading">Task 1: Add & Remove List Items</h3>
+    <input type="text" id="txt" placeholder="Enter text">
+    <button id="clk">Add Item</button>
+    <ul></ul>
+
+    <!-- Task 2: Change Text and Attributes -->
+    <h3 class="task-heading">Task 2: Modify Text & Button</h3>
+    <p id="para">This paragraph will be changed on button click.</p>
+    <button id="cng">Change Text</button>
+
+    <!-- Task 3: Clone and Modify Elements -->
+    <h3 class="task-heading">Task 3: Clone & Modify Content</h3>
+    <div id="cln" class="box">This is a sample box to be cloned.</div>
+    <button id="clnbtn">Clone Box</button>
+
+    <!-- Task 4: Add and Toggle CSS Classes -->
+    <h3 class="task-heading">Task 4: Toggle CSS Styles</h3>
+    <div id="toggleDiv" class="toggle-box">Click button to toggle style</div>
+    <button id="tglcls">Toggle Style</button>
+
+    <!-- Task 5: Form Input Value Manipulation -->
+    <h3 class="task-heading">Task 5: Uppercase & Lowercase Converter</h3>
+    <input type="text" placeholder="Enter text" id="uplr"><br><br>
+    <button id="up">Uppercase</button>
+    <button id="lr">Lowercase</button>
+
+    <script>
+        $(document).ready(function () {
+            // Task 1: Add and Remove List Items
+            $("#clk").click(function () {
+                let inputVal = $("#txt").val().trim();
+                if (inputVal !== "") {
+                    let listItem = $("<li></li>").text(inputVal);
+                    let delBtn = $("<button class='delbtn'>Delete</button>");
+                    
+                    delBtn.click(function () {
+                        $(this).parent().remove();
+                    });
+
+                    listItem.append(delBtn);
+                    $("ul").append(listItem);
+                    $("#txt").val("");
+                }
+            });
+
+            // Task 2: Change Text and Button Label
+            $("#cng").click(function () {
+                $("#para").text("Paragraph text updated!");
+                $(this).text("Clicked!");
+            });
+
+            // Task 3: Clone and Modify Elements
+            $("#clnbtn").click(function () {
+                $("#cln").clone().appendTo("body").css("background-color", "lightgray");
+            });
+
+            // Task 4: Toggle CSS Class
+            $("#tglcls").click(function () {
+                $("#toggleDiv").toggleClass("box");
+            });
+
+            // Task 5: Uppercase & Lowercase Conversion
+            $("#up").click(function () {
+                let text = $("#uplr").val();
+                $("#uplr").val(text.toUpperCase());
+            });
+
+            $("#lr").click(function () {
+                let text = $("#uplr").val();
+                $("#uplr").val(text.toLowerCase());
+            });
+        });
+    </script>
+
+</body>
+</html>

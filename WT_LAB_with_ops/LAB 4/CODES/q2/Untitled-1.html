@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 4 Q2 - jQuery Tasks (Madhav Appana, N210409)</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5; /* Light gray background */
+            text-align: center;
+            padding: 20px;
+        }
+
+        p {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .test {
+            font-size: 18px;
+            font-weight: bold;
+            color: darkred;
+        }
+
+        ul > li {
+            background-color: lightblue;
+            padding: 8px;
+            border-radius: 5px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: darkblue;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: darkred;
+        }
+
+        button {
+            padding: 8px 15px;
+            margin: 5px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        img {
+            width: 200px;
+            height: auto;
+            display: block;
+            margin: 10px auto;
+            border-radius: 10px;
+            border: 3px solid #555;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Lab 4 - jQuery Selectors & Attribute Manipulation</h2>
+
+    <p>This is task1 from lab-04</p>
+    <div class="test">In this we learn jQuery Basics:</div>
+
+    <ul>
+        <li>jQuery Selectors</li>
+        <li>jQuery Effects</li>
+        <li>DOM Manipulations</li>
+    </ul>
+
+    <ol>
+        <li>jQuery Selectors</li>
+        <li>jQuery Events</li>
+        <li>Modifying HTML Attributes</li>
+    </ol>
+
+    <a href="jqueryM&E.html" target="_self">Contact us</a><br>
+    <a href="https://www.flipkart.com">Flipkart</a><br>
+    <a href="https://www.amazon.in">Amazon</a>
+    
+    <br><br>
+
+    <button>Click Me</button><br><br>
+
+    <img src="https://images.unsplash.com/photo-1621878135994-8b56a55d4af5?w=500&auto=format&fit=crop&q=60" title="Dog">
+    <p id="para">This is a random small dog image.</p>
+
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+    <button id="tog">Toggle</button>
+    <button id="fi">Fade In</button>
+    <button id="fo">Fade Out</button>
+    <button id="ft">Fade Toggle</button>
+
+    <script>
+        $(document).ready(function(){
+            // Task 1: jQuery Selectors
+            $('p').css("background-color", 'lightyellow');
+            $('.test').hide();
+            $('ul > li').css("background-color", 'lightgreen');
+
+            // Task 2: Attribute Manipulation
+            $('a[href="jqueryM&E.html"]').attr('href', 'https://www.google.co.in');
+            $("a:not([target])").attr('target', '_blank');
+            $('img').attr('title', 'Updated Dog Image');
+
+            // Task 3: Button Interactions
+            $('#hide').click(function(){
+                $("#para").hide(2000);
+            });
+
+            $('#show').click(function(){
+                $("#para").show(2000);
+            });
+
+            $('#tog').click(function(){
+                $("#para").toggle(2000);
+            });
+
+            $('#fi').click(function(){
+                $("#para").fadeIn(2000);
+            });
+
+            $('#fo').click(function(){
+                $("#para").fadeOut(2000);
+            });
+
+            $('#ft').click(function(){
+                $("#para").fadeToggle(2000);
+            });
+        });
+    </script>
+
+</body>
+</html>

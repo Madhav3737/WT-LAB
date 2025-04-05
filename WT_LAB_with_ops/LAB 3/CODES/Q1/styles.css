@@ -1,0 +1,22 @@
+/* External CSS */
+* {
+    font-family: Arial, sans-serif;
+}
+
+p {
+    color: purple; /* Conflict: Inline (green), Embedded (darkblue), External (purple) */
+    padding: 8px;
+}
+
+nav a {
+    text-decoration: none;
+    color: blue;
+}
+
+nav a:hover {
+    color: red;
+}
+
+.box {
+    background-color: lightyellow; /* Unique to external CSS */
+}

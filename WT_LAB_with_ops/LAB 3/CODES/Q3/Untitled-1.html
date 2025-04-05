@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Grid - Madhav Appana (N210409)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f5f5f5;
+        }
+
+        .image-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px;
+        }
+
+        figure {
+            margin: 15px;
+            padding: 10px;
+            background-color: #ffffff;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+            width: 180px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        img {
+            width: 150px;
+            height: 150px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        figcaption {
+            font-weight: bold;
+            margin-top: 5px;
+            color: #333;
+        }
+
+        figure:hover {
+            transform: scale(1.1);
+        }
+
+        figure:hover figcaption {
+            color: darkblue;
+        }
+
+        figure:hover::after {
+            content: attr(data-desc);
+            display: block;
+            font-size: 14px;
+            color: #555;
+            margin-top: 5px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Image Gallery - Madhav Appana (N210409)</h1>
+
+    <div class="image-grid">
+        <figure data-desc="A beautiful sunset over the ocean">
+            <img src="https://source.unsplash.com/150x150/?sunset,sea" alt="Sunset">
+            <figcaption>Sunset View</figcaption>
+        </figure>
+        <figure data-desc="A majestic mountain covered with snow">
+            <img src="https://source.unsplash.com/150x150/?mountain,snow" alt="Mountain">
+            <figcaption>Snowy Mountain</figcaption>
+        </figure>
+        <figure data-desc="A peaceful forest with tall trees">
+            <img src="https://source.unsplash.com/150x150/?forest,trees" alt="Forest">
+            <figcaption>Dense Forest</figcaption>
+        </figure>
+    </div>
+
+    <div class="image-grid">
+        <figure data-desc="A close-up of a blooming flower">
+            <img src="https://source.unsplash.com/150x150/?flower,bloom" alt="Flower">
+            <figcaption>Beautiful Flower</figcaption>
+        </figure>
+        <figure data-desc="A city skyline at night with bright lights">
+            <img src="https://source.unsplash.com/150x150/?city,night" alt="City Skyline">
+            <figcaption>City Lights</figcaption>
+        </figure>
+        <figure data-desc="A calm beach with waves rolling in">
+            <img src="https://source.unsplash.com/150x150/?beach,waves" alt="Beach">
+            <figcaption>Serene Beach</figcaption>
+        </figure>
+    </div>
+
+    <div class="image-grid">
+        <figure data-desc="A space view of the Milky Way galaxy">
+            <img src="https://source.unsplash.com/150x150/?galaxy,space" alt="Galaxy">
+            <figcaption>Milky Way</figcaption>
+        </figure>
+        <figure data-desc="A waterfall flowing down a rocky cliff">
+            <img src="https://source.unsplash.com/150x150/?waterfall,river" alt="Waterfall">
+            <figcaption>Majestic Waterfall</figcaption>
+        </figure>
+        <figure data-desc="A desert with golden sand dunes">
+            <img src="https://source.unsplash.com/150x150/?desert,sand" alt="Desert">
+            <figcaption>Golden Desert</figcaption>
+        </figure>
+    </div>
+
+</body>
+</html>

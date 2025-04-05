@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flag Studio - Revamped</title>
+    <link rel="stylesheet" href="flag.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <main>
+            <div class="workspace">
+                
+
+                <div class="tools-panel">
+                    <h3>Actions</h3>
+                    <button id="fadeButton" class="styled-button">Fade</button>
+                    <button id="hoistButton" class="styled-button">Hoist</button>
+                    <button id="waveButton" class="styled-button">Wave</button>
+                    
+                    <h3>National Anthem</h3>
+                    <button id="playButton" class="styled-button">Play Anthem</button>
+
+                    <h3>Customization</h3>
+                    <label>Primary Color</label>
+                    <input type="color" id="colorPicker" value="#ff9933">
+                    <label>Secondary Color</label>
+                    <input type="color" id="secondaryColorPicker" value="#138808">
+
+                    
+                </div>
+
+                <div class="flag-display">
+                    <div class="sky-background"></div>
+                    <div class="flag-container">
+                        <div class="flag" id="flag"></div>
+                        <div class="flagpole">
+                            <div class="pole"></div>
+                            <div class="base"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <audio id="indiaAnthem" src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Jana_Gana_Mana_instrumental.ogg"></audio>
+    <script src="flag.js"></script>
+</body>
+</html>

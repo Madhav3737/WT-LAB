@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JS DOM Paragraph Styling</title>
+<style>
+  #text {
+    font-size: 20px;
+    font-family: "Verdana";
+    color: blue;
+  }
+</style>
+</head>
+<body>
+<p id="text">JavaScript Exercise - Style Modification</p>
+<div>
+<button id="jsstyle" onclick="js_style()">Apply Style</button>
+</div>
+
+<script>
+  function js_style(){
+    let content = document.getElementById("text");
+    content.style.cssText = "font-size:28px; font-family:'Courier New'; color:green";
+  }
+</script>
+</body>
+</html>
